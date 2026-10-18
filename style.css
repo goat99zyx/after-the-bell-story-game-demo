@@ -1,0 +1,79 @@
+:root {
+  color-scheme: light;
+  font-family: Trebuchet MS, Verdana, sans-serif;
+  color: #20354f;
+  background: #e7edf3;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; }
+button { font: inherit; cursor: pointer; }
+button:focus-visible { outline: 3px solid #e67b27; outline-offset: 4px; }
+
+.shell { width: min(1080px, calc(100% - 32px)); margin: 28px auto 38px; }
+.masthead, .scene-head, .game-bottom, .dialogue-top { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.masthead { margin-bottom: 23px; }
+.small-label { margin: 0 0 7px; color: #50708e; font-size: .8rem; font-weight: 700; letter-spacing: .035em; }
+h1, h2, h3, p { margin-top: 0; }
+h1 { margin-bottom: 0; color: #254a78; font-family: Georgia, serif; font-size: clamp(2.5rem, 5vw, 4.2rem); line-height: 1; letter-spacing: -.05em; }
+.spark { color: #df8734; font-family: Georgia, serif; font-size: .5em; vertical-align: top; margin-left: 5px; }
+.text-button { border: 0; border-bottom: 2px solid #254a78; background: transparent; color: #254a78; padding: 7px 1px; font-weight: 700; }
+.game { overflow: hidden; border: 4px solid #254a78; border-radius: 20px; background: #fffdf7; box-shadow: 0 10px 0 #b7c9d8; }
+.scene-head { min-height: 92px; padding: 19px 25px 14px; }
+h2 { margin: 0; font-family: Georgia, serif; font-size: clamp(1.75rem, 3vw, 2.5rem); letter-spacing: -.03em; }
+.objective { margin: 0; max-width: 250px; color: #48647d; font-size: .92rem; line-height: 1.4; text-align: right; }
+
+.stage { position: relative; height: min(53vw, 495px); min-height: 360px; overflow: hidden; border-block: 4px solid #254a78; }
+.stage-art { position: absolute; inset: 0; pointer-events: none; }
+.stage-art::before, .stage-art::after { position: absolute; content: ""; }
+.stage[data-scene="courtyard"] .stage-art { background: linear-gradient(#8fbdd1 0 53%, #9fb87c 53% 63%, #c8ab7d 63%); }
+.stage[data-scene="courtyard"] .stage-art::before { left: 8%; top: 9%; width: 26%; height: 42%; background: #f9d9a9; border: 7px solid #42648a; box-shadow: 150px 7px 0 -28px #f9d9a9, 150px 7px 0 -21px #42648a; }
+.stage[data-scene="courtyard"] .stage-art::after { right: 14%; bottom: 12%; width: 31%; height: 8%; background: #73543b; border-radius: 7px; box-shadow: 0 16px 0 -8px #3f5064, 0 -22px 0 -9px #73543b; }
+.stage[data-scene="hallway"] .stage-art { background: linear-gradient(90deg, #d7d0bc 0 18%, #e9dfcb 18% 82%, #d0c1ac 82%); }
+.stage[data-scene="hallway"] .stage-art::before { inset: 12% 7% 23%; background: repeating-linear-gradient(90deg, #657fa1 0 15%, #536f91 15% 16%, transparent 16% 22%); opacity: .82; }
+.stage[data-scene="hallway"] .stage-art::after { left: 0; right: 0; bottom: 0; height: 22%; background: #a59076; transform: skewY(-1.5deg); transform-origin: bottom right; }
+.stage[data-scene="library"] .stage-art { background: linear-gradient(#c6b89b 0 69%, #998168 69%); }
+.stage[data-scene="library"] .stage-art::before { inset: 8% 7% 32%; background: repeating-linear-gradient(90deg, #3f5670 0 2%, #f0c27a 2% 5%, #a75750 5% 8%, #d8e1d2 8% 11%, #3f5670 11% 14%, transparent 14% 20%); border: 15px solid #6c5744; }
+.stage[data-scene="library"] .stage-art::after { left: 32%; right: 18%; bottom: 15%; height: 11%; background: #6b4b35; border-radius: 8px; box-shadow: 0 30px 0 -15px #483d38; }
+.hotspots { position: absolute; inset: 0; }
+.hotspot { position: absolute; transform: translate(-50%, -50%); display: grid; justify-items: center; min-width: 90px; max-width: 150px; border: 0; background: none; color: #173d69; text-align: center; }
+.hotspot-icon { display: grid; place-items: center; width: 68px; height: 68px; border: 4px solid #254a78; border-radius: 50%; background: #fff8de; box-shadow: 0 5px 0 #254a78; color: #d17730; font-family: Georgia, serif; font-size: 2.5rem; line-height: 1; transition: transform .12s ease; }
+.hotspot:hover .hotspot-icon, .hotspot:focus-visible .hotspot-icon { transform: translateY(-5px); }
+.hotspot-label { margin-top: 10px; padding: 5px 8px; border-radius: 7px; background: #fffdf7; font-size: .82rem; font-weight: 700; line-height: 1.2; box-shadow: 0 2px 0 #254a78; }
+.stage-hint { position: absolute; left: 18px; bottom: 14px; margin: 0; max-width: 390px; padding: 8px 12px; border-radius: 7px; background: #fffdf7e8; font-size: .84rem; line-height: 1.35; }
+.game-bottom { align-items: stretch; min-height: 113px; padding: 20px 25px; }
+.exits { display: flex; flex-wrap: wrap; align-content: center; gap: 10px; }
+.exit-button, .dialogue-choices button { border: 2px solid #254a78; border-radius: 10px; padding: 9px 13px; background: #e6eef4; color: #254a78; font-weight: 700; }
+.exit-button:hover, .dialogue-choices button:hover { background: #d3e4f0; }
+.inventory { min-width: 240px; border-left: 2px solid #d5e0e8; padding-left: 20px; }
+.inventory h3 { margin-bottom: 9px; font-family: Georgia, serif; font-size: 1.05rem; }
+.inventory-items { display: flex; flex-wrap: wrap; gap: 6px; }
+.item { border: 1px solid #c99b66; border-radius: 7px; padding: 5px 7px; background: #fff2d9; font-size: .78rem; }
+.empty-inventory { margin: 0; color: #698097; font-size: .8rem; }
+.footer-note { margin: 21px 4px 0; color: #4d657c; font-size: .85rem; }
+
+.dialogue-layer { position: fixed; inset: 0; z-index: 5; display: grid; place-items: end center; padding: 20px; background: #13294093; }
+.dialogue-layer[hidden] { display: none; }
+.dialogue { width: min(780px, 100%); margin-bottom: max(10px, 5vh); border: 4px solid #254a78; border-radius: 18px; padding: 20px 24px 24px; background: #fffdf7; box-shadow: 0 9px 0 #132940; }
+.speaker { margin: 0; color: #bc6d2e; font-family: Georgia, serif; font-size: 1.3rem; font-weight: 700; }
+.close-button { border: 0; background: none; color: #254a78; font-size: 2rem; line-height: 1; }
+.dialogue-text { margin: 19px 0 23px; font-family: Georgia, serif; font-size: clamp(1.2rem, 2vw, 1.55rem); line-height: 1.45; }
+.dialogue-choices { display: flex; flex-wrap: wrap; gap: 10px; }
+
+@media (max-width: 650px) {
+  .shell { width: calc(100% - 18px); margin: 12px auto 25px; }
+  .masthead { align-items: end; margin: 0 4px 15px; }
+  .small-label { font-size: .7rem; }
+  .text-button { font-size: .8rem; white-space: nowrap; }
+  .game { border-width: 3px; border-radius: 14px; }
+  .scene-head { align-items: start; min-height: 100px; padding: 13px; }
+  .objective { max-width: 140px; font-size: .72rem; }
+  .stage { height: 460px; }
+  .hotspot-icon { width: 58px; height: 58px; font-size: 2rem; }
+  .hotspot-label { font-size: .72rem; }
+  .stage-hint { max-width: 270px; font-size: .75rem; }
+  .game-bottom { flex-direction: column; padding: 15px; gap: 18px; }
+  .inventory { min-width: 0; border-left: 0; border-top: 2px solid #d5e0e8; padding: 12px 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) { .hotspot-icon { transition: none; } }

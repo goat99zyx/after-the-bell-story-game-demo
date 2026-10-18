@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#254a78">
+  <title>After the Bell — editable story game sample</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="masthead">
+      <div>
+        <p class="small-label">An editable story game sample</p>
+        <h1>After the Bell<span class="spark" aria-hidden="true">✦</span></h1>
+      </div>
+      <button id="restart" class="text-button" type="button">Start over</button>
+    </header>
+
+    <section class="game" aria-label="Story game">
+      <div class="scene-head">
+        <div>
+          <p class="small-label" id="chapter"></p>
+          <h2 id="scene-title"></h2>
+        </div>
+        <p id="objective" class="objective"></p>
+      </div>
+
+      <div id="stage" class="stage" role="group" aria-label="Interactive scene">
+        <div id="stage-art" class="stage-art" aria-hidden="true"></div>
+        <div id="hotspots" class="hotspots"></div>
+        <p id="stage-hint" class="stage-hint"></p>
+      </div>
+
+      <div class="game-bottom">
+        <nav id="exits" class="exits" aria-label="Move between scenes"></nav>
+        <section class="inventory" aria-label="Inventory">
+          <h3>In your pockets</h3>
+          <div id="inventory-items" class="inventory-items" aria-live="polite"></div>
+        </section>
+      </div>
+    </section>
+
+    <p class="footer-note">Click the objects and people to explore. Your progress saves in this browser.</p>
+  </main>
+
+  <div id="dialogue-layer" class="dialogue-layer" hidden>
+    <section class="dialogue" role="dialog" aria-modal="true" aria-labelledby="dialogue-speaker">
+      <div class="dialogue-top">
+        <p id="dialogue-speaker" class="speaker"></p>
+        <button id="dialogue-close" class="close-button" type="button" aria-label="Close dialogue">×</button>
+      </div>
+      <p id="dialogue-text" class="dialogue-text"></p>
+      <div id="dialogue-choices" class="dialogue-choices"></div>
+    </section>
+  </div>
+
+  <script src="story.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
