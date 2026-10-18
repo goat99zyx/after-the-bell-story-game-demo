@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Story editor — After the Bell</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="editor.css">
+</head>
+<body>
+  <main class="shell editor-shell">
+    <header class="masthead">
+      <div>
+        <p class="small-label">No-code story editor</p>
+        <h1>Make it yours<span class="spark" aria-hidden="true">✦</span></h1>
+      </div>
+      <a class="text-button" href="index.html">Play the original ↗</a>
+    </header>
+    <p class="editor-intro">Replace the sample's words and scene backgrounds. Preview in this browser, then download your edited <code>story.js</code> and place it beside <code>index.html</code>.</p>
+    <div class="editor-actions">
+      <button id="preview" type="button">Preview my story ↗</button>
+      <button id="download" type="button">Download story.js ↓</button>
+      <button id="reset" type="button" class="secondary">Reset to sample</button>
+      <span id="status" role="status" aria-live="polite"></span>
+    </div>
+    <section class="editor-card" aria-labelledby="basics-title">
+      <h2 id="basics-title">The story</h2>
+      <div class="field-grid">
+        <label>Game title <input id="story-title" maxlength="80" required></label>
+        <label>Player's goal <input id="story-objective" maxlength="180" required></label>
+      </div>
+    </section>
+    <nav id="scene-tabs" class="scene-tabs" aria-label="Choose a scene"></nav>
+    <section id="scene-editor" class="editor-card" aria-live="polite"></section>
+    <p class="editor-foot">This editor changes the three existing scenes and interactions. Scene connections and item rules stay in place. Keep a copy of your downloaded file; browser drafts can be cleared.</p>
+  </main>
+  <script src="story.js"></script>
+  <script src="editor.js"></script>
+</body>
+</html>

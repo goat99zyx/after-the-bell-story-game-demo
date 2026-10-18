@@ -8,7 +8,9 @@ Open `index.html` in a modern browser. No account, build tool, server, or intern
 
 ## Make it yours
 
-Edit `story.js`:
+Open `editor.html` to replace the title, scene descriptions, interaction labels, dialogue, and scene backgrounds without editing code. Choose a JPG, PNG, or WebP image under 500 KB for each scene. **Preview my story** opens your draft in the browser; **Download story.js** gives you the edited story file to place beside `index.html`. Keep the downloaded file as your copy, since browser storage can be cleared. The editor preserves the sample's three scenes, connections, and item rules.
+
+For more structural changes, edit `story.js` directly:
 
 - Change `title`, `objective`, and the text in each scene.
 - Add or remove scenes in `scenes`. Each scene has `exits` and `hotspots`.
@@ -30,7 +32,8 @@ The public demo offers a $100 starter project: up to three scenes, six interacti
 
 ## Files
 
-- `index.html` — accessible page structure
+- `index.html` — accessible game page
+- `editor.html`, `editor.css`, `editor.js` — browser-based story editor
 - `story.js` — all editable story content
 - `game.js` — scene, interaction, dialogue, inventory, and save logic
 - `style.css` — layout and original CSS art

@@ -1,7 +1,15 @@
 (() => {
   "use strict";
 
-  const story = window.STORY;
+  let story = window.STORY;
+  if (new URLSearchParams(location.search).has("preview")) {
+    try {
+      const draft = JSON.parse(localStorage.getItem("after-the-bell-story-draft"));
+      if (draft && draft.scenes && draft.scenes[draft.startScene] && draft.items) story = draft;
+    } catch { /* Use the published story if no valid draft exists. */ }
+  }
+  document.title = `${story.title} — interactive story`;
+  document.querySelector("h1").firstChild.textContent = story.title;
   const saveKey = "after-the-bell-save-v1";
   const $ = (id) => document.getElementById(id);
   const emptyState = () => ({ scene: story.startScene, items: [], used: [], finished: false });
@@ -70,6 +78,8 @@
     $("scene-title").textContent = scene.title;
     $("objective").textContent = state.finished ? "You found the note. The next chapter is yours to write." : story.objective;
     $("stage").dataset.scene = scene.art;
+    $("stage").classList.toggle("custom-art", Boolean(scene.image));
+    $("stage-art").style.backgroundImage = scene.image ? `url(${JSON.stringify(scene.image)})` : "";
     $("stage-hint").textContent = scene.description;
 
     const hotspotBox = $("hotspots");
