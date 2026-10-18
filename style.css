@@ -13,6 +13,7 @@ button:focus-visible { outline: 3px solid #e67b27; outline-offset: 4px; }
 .shell { width: min(1080px, calc(100% - 32px)); margin: 28px auto 38px; }
 .masthead, .scene-head, .game-bottom, .dialogue-top { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
 .masthead { margin-bottom: 23px; }
+.header-actions { display: flex; align-items: center; gap: 18px; }
 .small-label { margin: 0 0 7px; color: #50708e; font-size: .8rem; font-weight: 700; letter-spacing: .035em; }
 h1, h2, h3, p { margin-top: 0; }
 h1 { margin-bottom: 0; color: #254a78; font-family: Georgia, serif; font-size: clamp(2.5rem, 5vw, 4.2rem); line-height: 1; letter-spacing: -.05em; }
@@ -25,6 +26,10 @@ h2 { margin: 0; font-family: Georgia, serif; font-size: clamp(1.75rem, 3vw, 2.5r
 
 .stage { position: relative; height: min(53vw, 495px); min-height: 360px; overflow: hidden; border-block: 4px solid #254a78; }
 .stage-art { position: absolute; inset: 0; pointer-events: none; }
+.scene-enter .stage-art { animation: scene-reveal .42s ease-out both; }
+.scene-enter .hotspot { animation: hotspot-reveal .42s ease-out both; }
+@keyframes scene-reveal { from { opacity: .35; transform: scale(1.035); } to { opacity: 1; transform: scale(1); } }
+@keyframes hotspot-reveal { from { opacity: 0; } to { opacity: 1; } }
 .stage-art::before, .stage-art::after { position: absolute; content: ""; }
 .stage[data-scene="courtyard"] .stage-art { background: linear-gradient(#8fbdd1 0 53%, #9fb87c 53% 63%, #c8ab7d 63%); }
 .stage[data-scene="courtyard"] .stage-art::before { left: 8%; top: 9%; width: 26%; height: 42%; background: #f9d9a9; border: 7px solid #42648a; box-shadow: 150px 7px 0 -28px #f9d9a9, 150px 7px 0 -21px #42648a; }
@@ -72,6 +77,7 @@ h2 { margin: 0; font-family: Georgia, serif; font-size: clamp(1.75rem, 3vw, 2.5r
   .masthead { align-items: end; margin: 0 4px 15px; }
   .small-label { font-size: .7rem; }
   .text-button { font-size: .8rem; white-space: nowrap; }
+  .header-actions { gap: 10px; }
   .game { border-width: 3px; border-radius: 14px; }
   .scene-head { align-items: start; min-height: 100px; padding: 13px; }
   .objective { max-width: 140px; font-size: .72rem; }
@@ -85,4 +91,7 @@ h2 { margin: 0; font-family: Georgia, serif; font-size: clamp(1.75rem, 3vw, 2.5r
   .commission-link { align-self: flex-start; }
 }
 
-@media (prefers-reduced-motion: reduce) { .hotspot-icon { transition: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .hotspot-icon { transition: none; }
+  .scene-enter .stage-art, .scene-enter .hotspot { animation: none; }
+}

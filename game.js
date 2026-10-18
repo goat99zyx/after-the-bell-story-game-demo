@@ -11,6 +11,7 @@
   document.title = `${story.title} — interactive story`;
   document.querySelector("h1").firstChild.textContent = story.title;
   const saveKey = "after-the-bell-save-v1";
+  const soundKey = "after-the-bell-sound-v1";
   const $ = (id) => document.getElementById(id);
   const emptyState = () => ({ scene: story.startScene, items: [], used: [], finished: false });
 
@@ -26,6 +27,43 @@
 
   let state = loadState();
   let lastFocus = null;
+  let soundOn = false;
+  let audioContext = null;
+
+  try { soundOn = localStorage.getItem(soundKey) === "on"; } catch { /* Storage may be unavailable. */ }
+
+  function updateSoundButton() {
+    $("sound-toggle").textContent = soundOn ? "Sound on" : "Sound off";
+    $("sound-toggle").setAttribute("aria-pressed", String(soundOn));
+  }
+
+  function playTone(frequency, duration = 0.08) {
+    if (!soundOn) return;
+    try {
+      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+      if (!AudioContextClass) return;
+      audioContext ||= new AudioContextClass();
+      if (audioContext.state === "suspended") audioContext.resume();
+      const oscillator = audioContext.createOscillator();
+      const gain = audioContext.createGain();
+      const now = audioContext.currentTime;
+      oscillator.type = "sine";
+      oscillator.frequency.value = frequency;
+      gain.gain.setValueAtTime(0.0001, now);
+      gain.gain.exponentialRampToValueAtTime(0.08, now + 0.015);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+      oscillator.connect(gain).connect(audioContext.destination);
+      oscillator.start(now);
+      oscillator.stop(now + duration);
+    } catch { /* Audio is optional. */ }
+  }
+
+  function animateScene() {
+    const stage = $("stage");
+    stage.classList.remove("scene-enter");
+    void stage.offsetWidth;
+    stage.classList.add("scene-enter");
+  }
 
   function save() {
     try { localStorage.setItem(saveKey, JSON.stringify(state)); } catch { /* Private browsing may disable storage. */ }
@@ -64,7 +102,12 @@
       showDialogue(hotspot.missing);
       return;
     }
-    if (hotspot.collect && !state.items.includes(hotspot.collect)) state.items.push(hotspot.collect);
+    if (hotspot.collect && !state.items.includes(hotspot.collect)) {
+      state.items.push(hotspot.collect);
+      playTone(660, 0.12);
+    } else {
+      playTone(440);
+    }
     if (hotspot.once) state.used.push(hotspot.id);
     if (hotspot.ending) state.finished = true;
     save();
@@ -109,6 +152,8 @@
         state.scene = exit.scene;
         save();
         render();
+        animateScene();
+        playTone(520);
         $("scene-title").focus();
       });
       exitBox.append(button);
@@ -136,6 +181,13 @@
     save();
     closeDialogue();
     render();
+    animateScene();
+  });
+  $("sound-toggle").addEventListener("click", () => {
+    soundOn = !soundOn;
+    try { localStorage.setItem(soundKey, soundOn ? "on" : "off"); } catch { /* Storage may be unavailable. */ }
+    updateSoundButton();
+    playTone(620);
   });
   $("dialogue-close").addEventListener("click", closeDialogue);
   $("dialogue-layer").addEventListener("click", (event) => {
@@ -151,5 +203,6 @@
     }
   });
   $("scene-title").tabIndex = -1;
+  updateSoundButton();
   render();
 })();
