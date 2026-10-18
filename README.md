@@ -24,6 +24,10 @@ The story engine is in `game.js`. If you rename or restructure item IDs, use **S
 
 This is a working vertical slice with three scenes and one short ending. Names, writing, and art are original; it does not copy characters or assets from any commercial game.
 
+## Custom commissions
+
+The public demo offers a $100 starter project: up to three scenes, six interactions, dialogue choices, and one ending, using the buyer's supplied story and optional art. Scope is agreed before work begins. Prospective buyers can [open an issue](https://github.com/goat99zyx/after-the-bell-story-game-demo/issues/new) to discuss a commission. Please do not post private story details or contact information in a public issue.
+
 ## Files
 
 - `index.html` — accessible page structure
