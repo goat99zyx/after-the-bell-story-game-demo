@@ -72,7 +72,7 @@ kbd{font-family:inherit;font-size:11px;border:1px solid #73899c;border-radius:5p
 .footer{gap:16px;margin-top:20px;color:#7f95a6;font-size:12px}
 .dialog-backdrop{position:fixed;inset:0;display:grid;place-items:center;background:#07111ccf;z-index:5;padding:20px;backdrop-filter:blur(7px)}
 .dialog-backdrop.hidden{display:none}
-.dialog{width:min(420px,100%);border:1px solid #5a7d8a;border-radius:25px;background:#1c3040;padding:32px 31px;box-shadow:0 32px 90px #0008;text-align:center}
+.dialog{width:min(420px,100%);max-height:calc(100dvh - 40px);overflow-y:auto;border:1px solid #5a7d8a;border-radius:25px;background:#1c3040;padding:32px 31px;box-shadow:0 32px 90px #0008;text-align:center}
 .dialog-ornament{display:grid;place-items:center;margin:0 auto 19px;width:60px;height:60px;border-radius:18px;background:#4de0d0;color:#0a2630;font-size:40px}
 .dialog .eyebrow{color:#66e8dc}
 .dialog h2{font-size:29px;letter-spacing:-.05em;margin:10px 0 13px}
@@ -87,3 +87,4 @@ kbd{font-family:inherit;font-size:11px;border:1px solid #73899c;border-radius:5p
 @media(max-width:480px){.brand-mark{width:38px;height:38px;font-size:28px}.brand h1{font-size:20px}.brand .eyebrow{font-size:9px}.hero-copy{font-size:18px}.play-panel{padding:12px}.score-item{min-width:0}.score-item strong{font-size:27px}.board-shell{padding:10px 10px 7px}.board{gap:3px;padding:4px;border-radius:12px}.cell{border-radius:5px}.board-bottom{font-size:10px}.pieces{gap:6px}.piece-button{padding:7px 3px;min-height:90px}.piece-button.selected{padding:6px 2px}.mini-grid{grid-template-columns:repeat(3,14px);grid-template-rows:repeat(3,14px);gap:2px}.footer{font-size:10px}}
 @media(max-width:480px) and (max-height:900px){.app{padding:10px 12px 12px}.hero{margin:9px 0 10px;gap:7px}.hero .eyebrow,.hero-copy{display:none}.mode-switch{width:100%;justify-content:center}.mode-button{padding:6px 15px}.game-layout{gap:9px}.play-panel{padding:9px}.scorebar{margin-bottom:7px}.score-item strong{font-size:24px}.board-shell{padding:6px}.board-top{padding-bottom:5px}.board-bottom{padding-top:5px;min-height:25px}.side-panel{padding:10px}.side-heading{margin-bottom:7px}.side-heading h2{font-size:16px;margin-top:0}.side-heading .eyebrow{display:none}.piece-button{min-height:65px;gap:3px}.piece-name{font-size:9px}.mini-grid{grid-template-columns:repeat(3,11px);grid-template-rows:repeat(3,11px)}.rotate-button{margin-top:8px;min-height:37px}.tip-card,.footer{display:none}.side-footer{padding-top:9px}}
 @media(prefers-reduced-motion:reduce){*{transition-duration:0s!important;animation-duration:0s!important}}
+
