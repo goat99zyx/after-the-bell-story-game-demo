@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101d27">
+  <meta name="description" content="Keep a storm-battered coastal microgrid alive for four days in this compact systems simulation.">
+  <title>Nightwatch Microgrid</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="masthead">
+      <div class="mark" aria-hidden="true"><span class="mark-light"></span><span class="mark-bars">▥</span></div>
+      <div class="brand"><p class="eyebrow">COASTAL OPERATIONS / SIMULATION 01</p><h1>NIGHTWATCH <span>MICROGRID</span></h1></div>
+      <button id="helpButton" class="ghost" type="button">HOW TO PLAY <span aria-hidden="true">↗</span></button>
+    </header>
+
+    <section class="intro" aria-label="Game objective">
+      <div><p class="eyebrow amber">YOUR WATCH BEGINS</p><p>Four days. One isolated harbor. Decide where the power goes before each shift ends.</p></div>
+      <div class="intro-rule">Keep the clinic powered, hold public trust, and finish with the grid intact.</div>
+    </section>
+
+    <div id="game" aria-live="polite"></div>
+
+    <footer><span>AN ORIGINAL BROWSER SIMULATION</span><span>12 SHIFTS · NO ACCOUNTS · LOCAL SAVE</span></footer>
+  </main>
+
+  <dialog id="helpDialog" aria-labelledby="helpTitle">
+    <div class="dialog-inner">
+      <p class="eyebrow amber">FIELD MANUAL</p><h2 id="helpTitle">Keep the harbor alive.</h2>
+      <p>Every shift, wind and solar output change with the weather. Choose diesel generation and battery discharge, then assign power to four districts. The clinic and flood pumps matter most, but ignoring homes and the port hurts trust and income.</p>
+      <p>Unspent renewable power charges the battery. Diesel consumes fuel and raises emissions. One maintenance action per shift can repair wind or solar equipment, or buy fuel. All choices and outcomes are saved in this browser.</p>
+      <p>Survive twelve shifts with trust at least 35, no more than two clinic outages, and nonnegative funds. Your final score rewards service and resilience and penalizes emissions and outages.</p>
+      <button id="closeHelp" class="primary" type="button">BACK TO THE GRID</button>
+    </div>
+  </dialog>
+  <script type="module" src="app.mjs"></script>
+</body>
+</html>
