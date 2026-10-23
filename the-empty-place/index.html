@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f2e9cf">
+  <title>The Empty Place</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sunbeam" aria-hidden="true"></div>
+  <main class="shell">
+    <header class="masthead">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">✳</span><span>CIVIC HALL <small>NOON SERVICE</small></span></div>
+      <div class="progress" aria-live="polite"><span id="round-count">SERVICE 1 / 4</span><span class="progress-track"><span id="progress-fill"></span></span></div>
+    </header>
+
+    <section class="heading" aria-labelledby="game-title">
+      <p id="eyebrow" class="eyebrow"></p>
+      <h1 id="game-title">The Empty Place<span class="title-dot">.</span></h1>
+      <p id="story" class="story"></p>
+    </section>
+
+    <div class="game-grid">
+      <section class="table-panel" aria-labelledby="table-title">
+        <div class="panel-heading"><div><span class="section-number">01 / THE ROOM</span><h2 id="table-title">Set the table</h2></div><span class="sun-icon" aria-hidden="true">☼</span></div>
+        <p class="instruction">Select a guest below, then select a numbered seat. Seat 0 stays empty. Seats count clockwise from the top.</p>
+        <div id="table" class="table" role="group" aria-label="Six-seat luncheon table">
+          <div class="table-top" aria-hidden="true"><span class="plate"></span><span class="table-copy">A PLACE<br>FOR EVERYONE</span></div>
+          <div class="empty-shadow" aria-hidden="true"></div>
+          <div id="seats"></div>
+        </div>
+        <div class="guest-area"><div class="guest-label"><span>GUEST CARDS</span><button id="clear-btn" class="text-button" type="button">Clear table ↺</button></div><div id="guest-bank" class="guest-bank" role="group" aria-label="Guest cards"></div></div>
+      </section>
+
+      <section class="notes-panel" aria-labelledby="notes-title">
+        <div class="panel-heading"><div><span class="section-number">02 / THE CARD</span><h2 id="notes-title">Find the false line</h2></div><span class="notebook-icon" aria-hidden="true">▤</span></div>
+        <p class="instruction">All but one of these statements are true. Arrange the guests, then mark the line that lies.</p>
+        <div id="clue-list" class="clue-list" role="group" aria-label="Seating statements"></div>
+        <div class="hint-area"><button id="hint-btn" class="text-button" type="button">Need a hint?</button><span id="hint-copy" role="status" aria-live="polite"></span></div>
+        <div class="submit-area"><div id="status" class="status" role="status" aria-live="polite">The host is waiting.</div><button id="check-btn" class="check-button" type="button">Check the table <span aria-hidden="true">→</span></button></div>
+      </section>
+    </div>
+
+    <footer><span>A game made for Bezi Jam 14 · Original code and visuals · AI-assisted writing and development</span><button id="help-btn" class="text-button" type="button">How to play</button></footer>
+  </main>
+
+  <div id="modal" class="modal" aria-hidden="true"><div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title"><span id="modal-kicker" class="eyebrow"></span><h2 id="modal-title"></h2><p id="modal-copy"></p><button id="modal-action" class="check-button" type="button"></button></div></div>
+  <script src="puzzle.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
