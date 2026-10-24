@@ -1,0 +1,5 @@
+.chapter-hud{display:flex;align-items:center;gap:20px}
+.echo-count{font-size:.66rem;font-weight:760;letter-spacing:.13em;color:#e8d7a7;white-space:nowrap}
+@media(max-width:640px){.chapter-hud{gap:9px}.echo-count{font-size:.53rem;letter-spacing:.04em}}
+@media(max-width:360px){.echo-count{display:none}}
+

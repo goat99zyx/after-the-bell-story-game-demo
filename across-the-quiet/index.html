@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071521">
+  <meta name="description" content="A small light crosses an ocean, one pulse at a time.">
+  <title>Across the Quiet</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="enhancements.css">
+  <script src="engine.js" defer></script>
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-a" aria-hidden="true"></div>
+  <div class="ambient ambient-b" aria-hidden="true"></div>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">✦</span> ORIGINAL GAME · HTML5 / WINDOWS</div>
+      <div class="top-actions">
+        <button id="sound-btn" class="text-button" type="button" aria-pressed="false">Sound off</button>
+        <button id="restart-btn" class="text-button" type="button">Restart</button>
+      </div>
+    </header>
+
+    <div class="intro">
+      <div class="eyebrow">A little light goes a long way</div>
+      <h1>Across <em>the Quiet</em></h1>
+      <p>A tiny journey about reaching someone across the water. Move, send a pulse, and let the path appear.</p>
+    </div>
+
+    <section class="play-card" aria-label="Game">
+      <div class="chapter-bar">
+        <div><span id="chapter-count" class="chapter-count">01 / 04</span><h2 id="chapter-title">A small beginning</h2></div>
+        <div class="chapter-hud"><div id="echo-count" class="echo-count">ECHOES 0 / 1</div><div class="energy-wrap"><span>LIGHT</span><span id="energy-label">Ready</span><div class="energy-track"><div id="energy-fill"></div></div></div></div>
+      </div>
+      <div class="canvas-frame">
+        <canvas id="game-canvas" width="900" height="540" aria-label="A light crosses islands and temporary bridges"></canvas>
+        <div id="overlay" class="overlay">
+          <div class="overlay-panel">
+            <div id="overlay-symbol" class="overlay-symbol">✦</div>
+            <div id="overlay-kicker" class="overlay-kicker">A SMALL JOURNEY</div>
+            <h2 id="overlay-title">Across the Quiet</h2>
+            <p id="overlay-copy">A gentle pulse makes hidden bridges appear. Find the echoes on each shore, then reach the waiting light. Pause on an island to recharge.</p>
+            <button id="overlay-action" class="primary-button" type="button">Begin the journey <span>→</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="status-bar"><span id="story-line">One light can make a little path.</span><span id="status-text" role="status" aria-live="polite">Ready when you are</span></div>
+      <div class="control-bar">
+        <div class="dpad" aria-label="Move">
+          <button class="move-btn up" type="button" data-dx="0" data-dy="-1" aria-label="Move up">↑</button>
+          <button class="move-btn left" type="button" data-dx="-1" data-dy="0" aria-label="Move left">←</button>
+          <button class="move-btn down" type="button" data-dx="0" data-dy="1" aria-label="Move down">↓</button>
+          <button class="move-btn right" type="button" data-dx="1" data-dy="0" aria-label="Move right">→</button>
+        </div>
+        <div class="control-copy"><strong>Move</strong><span>Arrow keys, WASD or buttons</span></div>
+        <button id="pulse-btn" class="pulse-button" type="button"><span class="pulse-icon">◌</span><span>Send a pulse<small>SPACE or tap</small></span></button>
+      </div>
+    </section>
+
+    <footer><span>Four shores · one journey · no rush</span><span>Made with original code and procedural visuals; AI assistance disclosed in README.</span></footer>
+  </main>
+</body>
+</html>
+
