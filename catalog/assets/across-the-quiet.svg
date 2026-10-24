@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-label="Across the Quiet: two lights and a path across dark water">
+  <defs>
+    <linearGradient id="sea" x2="0" y2="1"><stop stop-color="#071521"/><stop offset="1" stop-color="#123b50"/></linearGradient>
+    <radialGradient id="light"><stop stop-color="#e8fffb"/><stop offset=".45" stop-color="#9ae4dd"/><stop offset="1" stop-color="#9ae4dd" stop-opacity="0"/></radialGradient>
+    <radialGradient id="goal"><stop stop-color="#fff3c7"/><stop offset=".45" stop-color="#dfba6f"/><stop offset="1" stop-color="#dfba6f" stop-opacity="0"/></radialGradient>
+    <pattern id="stars" width="97" height="83" patternUnits="userSpaceOnUse"><circle cx="18" cy="23" r="1" fill="#d6edea" opacity=".35"/><circle cx="80" cy="64" r="1.2" fill="#d6edea" opacity=".2"/></pattern>
+  </defs>
+  <rect width="960" height="600" fill="url(#sea)"/>
+  <rect width="960" height="600" fill="url(#stars)"/>
+  <g fill="none" stroke="#42849a" stroke-opacity=".17"><path d="M0 265q240-28 480 0t480 0M0 323q240-28 480 0t480 0M0 381q240-28 480 0t480 0M0 439q240-28 480 0t480 0M0 497q240-28 480 0t480 0"/></g>
+  <text x="480" y="93" text-anchor="middle" font-family="Georgia,serif" font-size="59" fill="#f0f4ee">Across <tspan fill="#a9dbd9" font-style="italic">the Quiet</tspan></text>
+  <text x="480" y="135" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" letter-spacing="4" fill="#ddc68e">A LITTLE LIGHT GOES A LONG WAY</text>
+  <g fill="#417784" stroke="#83c6c6" stroke-opacity=".5" stroke-width="3">
+    <rect x="167" y="300" width="83" height="83" rx="13"/><rect x="257" y="300" width="83" height="83" rx="13"/><rect x="347" y="300" width="83" height="83" rx="13"/>
+    <rect x="620" y="300" width="83" height="83" rx="13"/><rect x="710" y="300" width="83" height="83" rx="13"/><rect x="800" y="300" width="83" height="83" rx="13"/>
+  </g>
+  <path d="M430 341h190" stroke="#a8ddd7" stroke-width="3" stroke-dasharray="12 13" opacity=".7"/>
+  <circle cx="300" cy="341" r="67" fill="url(#light)"/><circle cx="300" cy="341" r="21" fill="#a4e7df"/><circle cx="300" cy="341" r="9" fill="#f2fffb"/>
+  <circle cx="750" cy="341" r="67" fill="url(#goal)"/><circle cx="750" cy="341" r="21" fill="#d3b579"/><circle cx="750" cy="341" r="9" fill="#f8e6bc"/>
+  <g fill="none" stroke="#a4e7df" stroke-opacity=".24"><circle cx="300" cy="341" r="89"/><circle cx="300" cy="341" r="123"/></g>
+  <text x="480" y="535" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" letter-spacing="2" fill="#b8d9db">FOUR SHORES · ONE JOURNEY · NO RUSH</text>
+</svg>
+
