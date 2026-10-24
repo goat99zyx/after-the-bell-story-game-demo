@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 630 500" width="630" height="500">
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#fbf3d8"/><stop offset="1" stop-color="#dce7d8"/></linearGradient>
+    <radialGradient id="sun"><stop stop-color="#fff8d0"/><stop offset="1" stop-color="#e9d4aa"/></radialGradient>
+    <filter id="shade"><feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="#274b3b" flood-opacity=".22"/></filter>
+    <pattern id="grain" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".5" fill="#547268" opacity=".12"/></pattern>
+  </defs>
+  <rect width="630" height="500" fill="url(#bg)"/>
+  <path d="M492-55 725 245 465 245Z" fill="#fff8d8" opacity=".43"/>
+  <rect width="630" height="500" fill="url(#grain)"/>
+  <circle cx="553" cy="71" r="37" fill="#f6df97" opacity=".72"/>
+  <g stroke="#d2aa64" stroke-width="2" opacity=".7"><path d="M553 13v14M553 115v14M495 71h14M597 71h14M512 30l10 10M584 102l10 10M594 30l-10 10M522 102l-10 10"/></g>
+  <g font-family="Arial,sans-serif" font-weight="bold" fill="#29615a" letter-spacing="3"><text x="45" y="48" font-size="13">CIVIC HALL</text><text x="45" y="70" font-size="8" letter-spacing="4">NOON SERVICE · EVERYONE WELCOME</text></g>
+  <path d="M45 88h540" stroke="#9bb2a2" stroke-width="1"/>
+  <g fill="#263d39" font-family="Georgia,serif"><text x="39" y="166" font-size="58" letter-spacing="-3">The Empty</text><text x="39" y="224" font-size="58" letter-spacing="-3">Place<tspan fill="#b9824b">.</tspan></text></g>
+  <text x="44" y="256" font-family="Arial,sans-serif" font-size="13" fill="#5d7467" letter-spacing="1">SIX CHAIRS. FIVE GUESTS. ONE LIE.</text>
+  <g filter="url(#shade)"><ellipse cx="399" cy="355" rx="142" ry="95" fill="url(#sun)" stroke="#c5a779" stroke-width="4"/><ellipse cx="399" cy="355" rx="36" ry="36" fill="#f8f0d9" stroke="#cabda0" stroke-width="3"/>
+  <g fill="#fffaf0" stroke="#8eac9c" stroke-width="3"><rect x="372" y="246" width="54" height="38" rx="7" stroke-dasharray="5 4" fill="#e7eddf"/><rect x="500" y="294" width="54" height="38" rx="7"/><rect x="500" y="379" width="54" height="38" rx="7"/><rect x="372" y="427" width="54" height="38" rx="7"/><rect x="244" y="379" width="54" height="38" rx="7"/><rect x="244" y="294" width="54" height="38" rx="7"/></g></g>
+  <g font-family="Arial,sans-serif" font-size="8" font-weight="bold" text-anchor="middle" letter-spacing="1" fill="#688579"><text x="399" y="270">EMPTY</text><text x="527" y="319">1</text><text x="527" y="404">2</text><text x="399" y="452">3</text><text x="271" y="404">4</text><text x="271" y="319">5</text></g>
+  <path d="M45 464h142" stroke="#93a999"/><text x="45" y="484" font-family="Arial,sans-serif" font-size="10" font-weight="bold" letter-spacing="2" fill="#29615a">A SHORT LOGIC MYSTERY</text>
+</svg>
+
