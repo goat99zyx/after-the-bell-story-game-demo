@@ -1,0 +1,45 @@
+name: Browser game or interactive story inquiry
+description: Ask for a fixed-scope prototype, story adaptation, or existing-game license.
+title: "Inquiry: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for your interest. This issue is public. Please share only project details you are comfortable publishing. Do not include personal contact details, account credentials, unpublished assets, or payment information. Opening an issue is an inquiry, not an order or license agreement.
+  - type: dropdown
+    id: request
+    attributes:
+      label: What do you need?
+      options:
+        - Playable browser-game prototype
+        - Interactive story adaptation
+        - License for an existing browser game
+        - Interactive Story Starter Kit
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Public scope summary
+      description: Describe the gameplay or content and the outcome you want, without posting confidential material.
+      placeholder: "Example: a two-level browser puzzle with touch controls and supplied artwork."
+    validations:
+      required: true
+  - type: input
+    id: budget
+    attributes:
+      label: Budget in USD
+      description: An estimate or range is fine. Published starting prices are US$500 for prototypes and US$250 for story adaptations.
+      placeholder: "US$500–750"
+    validations:
+      required: true
+  - type: input
+    id: deadline
+    attributes:
+      label: Desired delivery date
+      placeholder: "YYYY-MM-DD or flexible"
+  - type: markdown
+    attributes:
+      value: |
+        I will reply with a proposed scope, acceptance criteria, timeline, rights and payment terms. Please agree to those terms in writing before any paid work starts. Payment can be requested through PayPal Goods & Services after a private contact channel is agreed.
