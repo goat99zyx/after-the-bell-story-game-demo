@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A $19 interactive story starter kit: three-scene HTML, CSS and JavaScript sample, offline editor, setup guide and non-exclusive commercial-use terms.">
+  <title>Interactive Story Starter Kit | Jasper Gabriel</title>
+  <style>
+    :root { color-scheme: light; --paper:#edf3ff; --white:#fff; --ink:#15244f; --blue:#2843a6; --orange:#c95032; --muted:#53627d; --line:#bec9e0; }
+    *,*::before,*::after { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.58 "Trebuchet MS","Segoe UI",sans-serif; }
+    a { color:inherit; }
+    a:focus-visible { outline:3px solid var(--orange); outline-offset:4px; }
+    .wrap { width:min(1100px,calc(100% - 36px)); margin-inline:auto; }
+    header { border-bottom:1px solid var(--line); }
+    nav { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    .brand { font-weight:800; text-decoration:none; }
+    .nav-link { font-weight:700; text-underline-offset:4px; }
+    .hero { display:grid; grid-template-columns:1.08fr .92fr; gap:clamp(24px,6vw,80px); align-items:center; padding-block:clamp(50px,8vw,100px); }
+    .eyebrow { margin:0 0 14px; color:var(--orange); font-weight:800; letter-spacing:.08em; text-transform:uppercase; font-size:.8rem; }
+    h1 { max-width:700px; margin:0; font-size:clamp(2.65rem,6.2vw,5.3rem); line-height:1; letter-spacing:-.065em; }
+    h1 span { display:block; color:var(--blue); }
+    .lead { max-width:570px; margin:24px 0 0; color:var(--muted); font-size:1.13rem; }
+    .actions { display:flex; flex-wrap:wrap; align-items:center; gap:14px 20px; margin-top:30px; }
+    .button { display:inline-flex; min-height:48px; align-items:center; justify-content:center; padding:10px 18px; border:2px solid var(--blue); border-radius:5px; color:var(--white); background:var(--blue); text-decoration:none; font-weight:800; }
+    .button:hover { background:var(--ink); border-color:var(--ink); }
+    .text-link { font-weight:800; text-underline-offset:4px; }
+    .small { color:var(--muted); font-size:.9rem; }
+    .preview { position:relative; min-height:410px; display:grid; place-items:center; padding:28px; border:7px solid var(--white); border-radius:12px; background:linear-gradient(145deg,#101f4b,#365bb2); box-shadow:0 18px 40px #16235830; }
+    .scene { width:min(100%,380px); padding:22px; background:#f9f4e9; border:2px solid #d8b590; border-radius:8px; box-shadow:10px 12px 0 #c95032; transform:rotate(-3deg); }
+    .scene-top { display:flex; justify-content:space-between; color:#7c603d; font-weight:800; font-size:.73rem; letter-spacing:.06em; text-transform:uppercase; }
+    .scene h2 { margin:26px 0 8px; color:#243053; font-size:1.8rem; letter-spacing:-.05em; }
+    .scene p { margin:0 0 20px; color:#4d5872; }
+    .scene-choice { padding:9px 11px; margin-top:8px; border:1px solid #b9bfd0; border-radius:4px; color:#263e89; background:var(--white); font-weight:700; }
+    .section-head { display:flex; justify-content:space-between; align-items:end; gap:20px; border-bottom:2px solid var(--ink); padding-bottom:14px; margin:14px 0 22px; }
+    .section-head h2 { margin:0; font-size:clamp(1.75rem,3.8vw,2.65rem); letter-spacing:-.05em; line-height:1.1; }
+    .section-head p { max-width:410px; margin:0; color:var(--muted); }
+    .cards { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+    .card { padding:24px; background:var(--white); border:1px solid var(--line); border-top:5px solid var(--orange); border-radius:7px; }
+    .card h3 { margin:0 0 8px; font-size:1.3rem; letter-spacing:-.03em; }
+    .card p { margin:0; color:var(--muted); }
+    .details { display:grid; grid-template-columns:1fr 1fr; gap:26px; margin-block:64px; }
+    .details>div { padding:28px; background:#dce6fb; border-left:5px solid var(--blue); }
+    .details h2 { margin:0 0 12px; font-size:1.55rem; letter-spacing:-.035em; }
+    .details p,.details li { color:#3c4b6c; }
+    .details ul { padding-left:20px; margin:0; }
+    .details p { margin:0; }
+    .order { padding:clamp(30px,5vw,55px); margin-bottom:60px; background:var(--ink); border-radius:9px; color:var(--white); }
+    .order h2 { margin:0; font-size:clamp(2rem,4vw,3.25rem); line-height:1.05; letter-spacing:-.05em; }
+    .order p { max-width:720px; color:#cdd8f6; }
+    .order .button { background:var(--white); color:var(--ink); border-color:var(--white); }
+    .order .button:hover { background:#dbe6fc; border-color:#dbe6fc; }
+    footer { padding-bottom:32px; color:var(--muted); font-size:.9rem; }
+    @media(max-width:760px) { .hero,.details { grid-template-columns:1fr; } .preview { min-height:350px; } .cards { grid-template-columns:1fr; } .section-head { display:block; } .section-head p { margin-top:10px; } }
+  </style>
+</head>
+<body>
+  <header><nav class="wrap" aria-label="Main navigation"><a class="brand" href="../catalog/">Jasper Gabriel / Browser work</a><a class="nav-link" href="#order">Ask to purchase</a></nav></header>
+  <main>
+    <section class="hero wrap" aria-labelledby="page-title">
+      <div><p class="eyebrow">Editable source package · US$19</p><h1 id="page-title">Make a story<span>someone can play.</span></h1><p class="lead">A complete three-scene browser story, an offline editor, and a concise setup guide. Change the dialogue and backgrounds, preview the result, and publish the finished folder on a static host.</p><div class="actions"><a class="button" href="https://goat99zyx.github.io/after-the-bell-story-game-demo/" target="_blank" rel="noopener noreferrer">Play the free sample</a><a class="text-link" href="#order">Ask for the source kit</a></div><p class="small">The sample is public. The US$19 package adds a convenient editable ZIP, editor, documentation, and the included non-exclusive license.</p></div>
+      <div class="preview" aria-label="Illustration of a sample story card"><div class="scene"><div class="scene-top"><span>Scene 01 / 03</span><span>Story editor</span></div><h2>After the bell</h2><p>One quiet room. Two clues. A choice that changes what comes next.</p><div class="scene-choice">Inspect the notice board</div><div class="scene-choice">Open the corridor door</div></div></div>
+    </section>
+
+    <section class="wrap" aria-labelledby="included-heading"><div class="section-head"><h2 id="included-heading">What is in the ZIP</h2><p>All files run locally in a modern browser. No engine, build step, account, or runtime service is required.</p></div><div class="cards"><div class="card"><h3>Playable starter</h3><p>Three linked scenes, six interactions, dialogue choices, two inventory items, a gated ending, and browser-local saving.</p></div><div class="card"><h3>Offline editor</h3><p>Replace scene text, titles and backgrounds, preview the story, and export an updated <code>story.js</code>.</p></div><div class="card"><h3>Editable delivery</h3><p>HTML, CSS and JavaScript source, README, and commercial-use terms for finished stories you make from the kit.</p></div></div></section>
+
+    <section class="details wrap" aria-label="Product limits and rights"><div><h2>What the editor changes</h2><ul><li>It edits the three existing scenes and their content.</li><li>New scene structures or inventory rules require editing <code>story.js</code>.</li><li>Saves stay in the current browser and do not sync between devices.</li><li>The ZIP has no payments, analytics, backend or multiplayer features.</li></ul></div><div><h2>Rights and disclosure</h2><p>A valid purchase grants the non-exclusive permissions written in the included license, to the extent of rights I hold. You may modify and commercialize a finished story; you may not resell the lightly changed starter as a competing template. Code, sample writing and CSS art were AI-assisted. Existing public copies remain accessible, and exclusive copyright in AI-generated elements is not guaranteed.</p></div></section>
+
+    <section class="order wrap" id="order" aria-labelledby="order-heading"><h2 id="order-heading">Request the US$19 package.</h2><p>Email me for a PayPal Goods &amp; Services payment request. After payment is confirmed, I will send the 14 KB ZIP to the agreed email address. This page is an inquiry, not an instant checkout; no payment or download happens when you click. Need a custom three-scene version? Ask about the separate US$250 starting quote.</p><a class="button" href="mailto:zyx888goat@outlook.com?subject=Interactive%20Story%20Starter%20Kit%20purchase%20inquiry&amp;body=Hello%20Jasper%2C%0A%0AI%20would%20like%20to%20purchase%20the%20US%2419%20Interactive%20Story%20Starter%20Kit.%20Please%20send%20the%20PayPal%20Goods%20%26%20Services%20payment%20request%20and%20confirm%20the%20delivery%20email.%0A">Email to request the kit</a></section>
+  </main>
+  <footer class="wrap">© 2026 Jasper Gabriel. Preview and sales terms are separate; this page does not grant source rights.</footer>
+</body>
+</html>
