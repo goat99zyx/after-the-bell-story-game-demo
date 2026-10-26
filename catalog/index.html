@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Seven playable, original HTML5 games available for scoped licensing and customization. Play every demo before requesting a quote.">
+  <meta name="description" content="Seven playable HTML5 games, licensing options, and fixed-scope browser prototype and interactive story services from Jasper Gabriel.">
   <meta name="color-scheme" content="light">
   <title>Playable browser games | Jasper Gabriel</title>
   <style>
@@ -61,6 +61,13 @@
     .terms > div { padding: 28px; background: #dce6fb; border-left: 5px solid var(--blue); }
     .terms h2 { margin: 0 0 12px; font-size: 1.55rem; letter-spacing: -.035em; }
     .terms p { margin: 0; color: #3c4b6c; }
+    .services { margin-bottom: 68px; }
+    .service-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+    .service { display: flex; flex-direction: column; padding: clamp(24px, 3vw, 36px); background: var(--white); border: 1px solid var(--line); border-top: 5px solid var(--orange); border-radius: 8px; }
+    .service h3 { margin: 0 0 12px; font-size: clamp(1.5rem, 2.6vw, 2rem); letter-spacing: -.04em; }
+    .service p { color: var(--muted); margin: 0 0 16px; }
+    .service .price { color: var(--blue); font-size: 1.2rem; font-weight: 800; }
+    .service .button { align-self: flex-start; margin-top: auto; }
     .contact { padding: clamp(32px, 5vw, 60px); margin-bottom: 64px; background: var(--ink); color: var(--white); border-radius: 9px; }
     .contact h2 { max-width: 700px; margin: 0; font-size: clamp(2rem, 4vw, 3.6rem); line-height: 1.04; letter-spacing: -.05em; }
     .contact p { max-width: 720px; color: #cdd8f6; margin: 18px 0 24px; }
@@ -72,7 +79,7 @@
       .hero-art { min-height: 360px; margin-right: 10px; }
       .section-head { display: block; }
       .section-head p { margin-top: 12px; }
-      .games, .terms { grid-template-columns: 1fr; }
+      .games, .terms, .service-grid { grid-template-columns: 1fr; }
       .game:first-child { grid-column: auto; grid-template-columns: 1fr; grid-template-rows: 250px auto; }
       .game:first-child img { max-height: none; }
       .game { grid-template-rows: 230px auto; }
@@ -85,7 +92,7 @@
   <header>
     <nav class="nav wrap" aria-label="Main navigation">
       <a class="brand" href="#top"><span>JG</span> Jasper Gabriel / Games</a>
-      <a class="nav-link" href="#contact">Discuss a license</a>
+      <a class="nav-link" href="#services">Commission a build</a>
     </nav>
   </header>
   <main id="top">
@@ -135,6 +142,14 @@
     <section class="terms wrap" id="terms" aria-label="Working terms">
       <div><h2>What can be delivered</h2><p>A defined build, readable source and setup notes can be included after we agree the exact title, platform, permitted uses, revisions, fee, acceptance test and payment schedule in writing. Small customization is available.</p></div>
       <div><h2>Rights and disclosure</h2><p>These games used AI assistance in code and visuals. I can grant only rights I actually hold. Public previews remain accessible; I cannot guarantee exclusive copyright in AI-generated elements. Any third-party material and platform integration is identified before delivery.</p></div>
+    </section>
+
+    <section class="services wrap" id="services" aria-labelledby="services-heading">
+      <div class="section-head"><h2 id="services-heading">Need something built?</h2><p>Start with a small, written milestone. These are starting quotes; I confirm the exact scope and fee before work begins.</p></div>
+      <div class="service-grid">
+        <article class="service"><h3>Playable browser prototype</h3><p class="price">From US$500</p><p>One original mechanic, up to three screens or short levels, keyboard and touch controls, responsive layout, one review round, a playable preview and source ZIP. Accounts, multiplayer and backend services are quoted separately.</p><a class="button" href="mailto:zyx888goat@outlook.com?subject=Browser%20prototype%20inquiry&amp;body=Core%20interaction%3A%0ATarget%20devices%3A%0AAssets%20available%3A%0ADeadline%3A%0ABudget%3A">Discuss a prototype</a></article>
+        <article class="service"><h3>Interactive story adaptation</h3><p class="price">From US$250</p><p>Adapt a three-scene story with your permitted text and images, choices and one inventory gate. Includes mobile and desktop checks, one correction round, and source ZIP. New mechanics and original art need a separate quote.</p><a class="button" href="mailto:zyx888goat@outlook.com?subject=Interactive%20story%20inquiry&amp;body=Story%20outline%3A%0AText%20and%20images%20available%3A%0ATarget%20devices%3A%0ADeadline%3A%0ABudget%3A">Discuss a story</a></article>
+      </div>
     </section>
 
     <section class="contact wrap" id="contact" aria-labelledby="contact-heading"><h2 id="contact-heading">Tell me where the games will live.</h2><p>As a starting point, ask for a US$500 non-exclusive license quote covering three selected browser games. Tell me the titles, target platform, desired changes, territory and deadline. PayPal Goods &amp; Services is available for payment. I will confirm the exact rights, acceptance test and payment schedule in writing before source delivery. A portfolio link alone is not a license grant.</p><a class="button" href="mailto:zyx888goat@outlook.com?subject=Three%20HTML5%20games%20%E2%80%94%20US%24500%20license%20inquiry&amp;body=Selected%20games%3A%0ATarget%20platform%3A%0ATerritory%20and%20term%3A%0AChanges%20needed%3A%0ADeadline%3A">Request a three-game quote</a></section>
